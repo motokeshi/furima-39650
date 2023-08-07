@@ -13,7 +13,7 @@
 |first_name_kana    |string |null: false                |
 |birthday           |date   |null: false                |
 
-has_many: items
+has_many: items  
 has_many: orders
 
 ## Items Table
@@ -29,8 +29,8 @@ has_many: orders
 |price                |integer    |null: false                    |
 |user                 |references |null: false, foreign_key: true |
 
-belongs_to: user
-has_one: Order
+belongs_to: user  
+has_one: order
 
 ## Orders Table
 |Column |Type       |Options                        |
@@ -38,8 +38,8 @@ has_one: Order
 |user   |references |null: false, foreign_key: true |
 |item   |references |null: false, foreign_key: true |
 
-belongs_to: user
-belongs_to: item
+belongs_to: user  
+belongs_to: item  
 has_one: address
 
 ## Addresses Tabele

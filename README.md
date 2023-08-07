@@ -12,8 +12,9 @@
 |first_name         |string |null: false                |
 |first_name_kana    |string |null: false                |
 |birthday           |date   |null: false                |
-has_many: Items
-has_many: Orders
+
+has_many: items
+has_many: orders
 
 ## Items Table
 |Column               |Type       |Options                        |
@@ -27,7 +28,8 @@ has_many: Orders
 |preparation_date_id  |integer    |null: false                    |
 |price                |integer    |null: false                    |
 |user                 |references |null: false, foreign_key: true |
-belongs_to: User
+
+belongs_to: user
 has_one: Order
 
 ## Orders Table
@@ -35,9 +37,10 @@ has_one: Order
 |-------|-----------|-------------------------------|
 |user   |references |null: false, foreign_key: true |
 |item   |references |null: false, foreign_key: true |
-belongs_to: User
-belongs_to: Item
-has_one: Address
+
+belongs_to: user
+belongs_to: item
+has_one: address
 
 ## Addresses Tabele
 |Column         |Type       |Options                        |
@@ -49,4 +52,5 @@ has_one: Address
 |building_name  |string     |                               |
 |phone_number   |string     |null: false                    |
 |order          |references |null: false, foreign_key: true |
-belongs_to: Order
+
+belongs_to: order

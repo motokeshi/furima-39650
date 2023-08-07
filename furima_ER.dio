@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="3rW64G4C0-JSAOvO7cYM" name="ページ1">
-        <mxGraphModel dx="1158" dy="298" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1158" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -102,16 +102,16 @@
                 <mxCell id="48" value="item (references, NOT NULL, foreign_key)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="46" vertex="1">
                     <mxGeometry y="56" width="240" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="has_many: Items&lt;br&gt;has_many: Orders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="50" value="has_many: items&lt;br&gt;has_many: orders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="160" y="360" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="51" value="belongs_to: User&lt;br&gt;has_one: Order" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="51" value="belongs_to: user&lt;br&gt;has_one: order" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="640" y="430" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="52" value="belongs_to: User&lt;br&gt;belongs_to: Item&lt;br&gt;has_one: Address" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="52" value="belongs_to: user&lt;br&gt;belongs_to: item&lt;br&gt;has_one: address" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="240.04" y="566" width="120" height="54" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" value="belongs_to: Order" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="53" value="belongs_to: order" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="640" y="716" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;exitX=0.333;exitY=1.1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="47" edge="1">

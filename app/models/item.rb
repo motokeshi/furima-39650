@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :conditon
   belongs_to :shipping_bear
+  belongs_to :prefecture
 
   belongs_to :user
   has_one_attached :image, dependent: :destroy
@@ -13,5 +14,6 @@ class Item < ApplicationRecord
   validates :category,      presence: true
   validates :condition,     presence: true
   validates :shipping_bear, presence: true
+  validates :prefecture,    presence: true
   validates :price,         presence: true, numericality: { in: 300..9999999 }
 end

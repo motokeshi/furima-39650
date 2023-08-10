@@ -7,7 +7,7 @@ FactoryBot.define do
     shipping_bear_id { rand(2..3) }
     prefecture_id { rand(2..48) }
     preparation_date_id { rand(2..4) }
-    price { rand( 300..9999999) }
+    price { rand(300..9_999_999) }
     association :user
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/sample.png'), filename: 'test_image.png')

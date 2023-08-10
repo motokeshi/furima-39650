@@ -19,5 +19,5 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :preparation_date_id
   end
-  validates :price,       presence: true, numericality: { only_integer: true, in: 300..9999999 }
+  validates :price, presence: true, numericality: { only_integer: true, in: 300..9_999_999 }
 end

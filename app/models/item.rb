@@ -4,16 +4,18 @@ class Item < ApplicationRecord
   belongs_to :conditon
   belongs_to :shipping_bear
   belongs_to :prefecture
+  belongs_to :preparation_date
 
   belongs_to :user
   has_one_attached :image, dependent: :destroy
 
-  validates :image,         presence: true
-  validates :name,          presence: true
-  validates :description,   presence: true
-  validates :category,      presence: true
-  validates :condition,     presence: true
-  validates :shipping_bear, presence: true
-  validates :prefecture,    presence: true
-  validates :price,         presence: true, numericality: { in: 300..9999999 }
+  validates :image,             presence: true
+  validates :name,              presence: true
+  validates :description,       presence: true
+  validates :category,          presence: true
+  validates :condition,         presence: true
+  validates :shipping_bear,     presence: true
+  validates :prefecture,        presence: true
+  validates :preparation_date,  presence: true
+  validates :price,             presence: true, numericality: { in: 300..9999999 }
 end

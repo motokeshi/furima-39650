@@ -9,13 +9,15 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image, dependent: :destroy
 
-  validates :image,             presence: true
-  validates :name,              presence: true, length: { maximum: 40 }
-  validates :description,       presence: true, length: { maximum: 1000 }
-  validates :category,          presence: true
-  validates :condition,         presence: true
-  validates :shipping_bear,     presence: true
-  validates :prefecture,        presence: true
-  validates :preparation_date,  presence: true
-  validates :price,             presence: true, numericality: { only_integer: true, in: 300..9999999 }
+  validates :image,       presence: true
+  validates :name,        presence: true, length: { maximum: 40 }
+  validates :description, presence: true, length: { maximum: 1000 }
+  with_options presence: true, numericality: { greater_than: 1 } do
+    validates :category_id
+    validates :condition_id
+    validates :shipping_bear_id
+    validates :prefecture_id
+    validates :preparation_date_id
+  end
+  validates :price,       presence: true, numericality: { only_integer: true, in: 300..9999999 }
 end

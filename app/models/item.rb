@@ -1,9 +1,10 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category, presence: true
+  belongs_to :conditon, presence: true
 
   belongs_to :user
-  
+
   has_one_attached :image, dependent: :destroy
   validates :image, presence: true
 

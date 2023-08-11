@@ -23,7 +23,7 @@ has_many: orders
 |description          |text       |null: false                    |
 |category_id          |integer    |null: false                    |
 |condition_id         |integer    |null: false                    |
-|shippin_bear_id      |integer    |null: false                    |
+|shipping_bear_id     |integer    |null: false                    |
 |prefecture_id        |integer    |null: false                    |
 |preparation_date_id  |integer    |null: false                    |
 |price                |integer    |null: false                    |

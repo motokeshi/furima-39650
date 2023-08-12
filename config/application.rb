@@ -20,4 +20,4 @@ module Furima39650
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
-Faker::Config.locale = :ja
+# Faker::Config.locale = :ja

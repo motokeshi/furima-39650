@@ -25,9 +25,9 @@ class ItemsController < ApplicationController
   def edit
     # 商品購入機能を実装後、購入済みの商品の編集ページへの遷移を制限する機能を追加する
     @item = Item.find(params[:id])
-    unless @item.user_id == current_user.id
-      redirect_to root_path
-    end
+    return if @item.user_id == current_user.id
+
+    redirect_to root_path
   end
 
   def update

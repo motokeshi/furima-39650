@@ -14,13 +14,18 @@ window.addEventListener("DOMContentLoaded", () => {
   
     const form = document.getElementById('charge-form')
     form.addEventListener("submit", (e) => {
-      console.log(numberElement)
       payjp.createToken(numberElement).then(function (response) {
         if (response.error) {
         } else {
           const token = response.id;
-          console.log(token);
+          const renderDom = document.getElementById('charge-form');
+          const tokenObj = `<input value=${token} name='token' type="hidden">`;
+          renderDom.insertAdjacentHTML("beforeend", tokenObj);
         }
+        numberElement.clear();
+        expiryElement.clear();
+        cvcElement.clear();
+        form.submit();
       });
       e.preventDefault();
     });

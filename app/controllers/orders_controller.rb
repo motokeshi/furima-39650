@@ -1,8 +1,12 @@
 class OrdersController < ApplicationController
   def index
-    @order_address = OrderAddress.new
     @item = Item.find(params[:item_id])
-    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    else
+      @order_address = OrderAddress.new
+      gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+    end
   end
   
   def create

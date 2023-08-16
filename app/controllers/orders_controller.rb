@@ -6,8 +6,12 @@ class OrdersController < ApplicationController
     if @item.user_id == current_user.id
       redirect_to root_path
     else
-      @order_address = OrderAddress.new
-      gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+      if @item.order.blank?
+        @order_address = OrderAddress.new
+        gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+      else
+        redirect_to root_path
+      end
     end
   end
   

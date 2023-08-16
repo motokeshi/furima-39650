@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update]
+  before_action :sold_item, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -23,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # 商品購入機能を実装後、購入済みの商品の編集ページへの遷移を制限する機能を追加する
     return if @item.user_id == current_user.id
 
     redirect_to root_path
@@ -52,5 +52,12 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def sold_item
+    item = Item.find(params[:id])
+    if item.order.present?
+      redirect_to root_path
+    end
   end
 end

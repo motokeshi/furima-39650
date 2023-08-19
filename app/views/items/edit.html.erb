@@ -25,6 +25,9 @@ app/assets/stylesheets/items/new.css %>
       </div>
     </div>
     <%# /商品画像 %>
+    <div id="previews">
+      <%= image_tag @item.image ,class:"preview-image" %>
+    </div>
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">

@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+function preview() {
   const pagePath = location.pathname;
   const previewList = document.getElementById("previews");
   if (pagePath.indexOf('new') === -1) return null;
@@ -18,4 +18,6 @@ window.addEventListener('turbo:load', () => {
     previewWrapper.appendChild(previewImage);
     previewList.appendChild(previewWrapper);
   });
-});
+};
+window.addEventListener('turbo:load', preview)
+window.addEventListener('turbo:render', preview)

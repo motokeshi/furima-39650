@@ -10,15 +10,15 @@ class Item < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_one :order
 
-  validates :image,       presence: true
+  validates :image,       presence: { message: "を設定してください" }
   validates :name,        presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
-  with_options presence: true, numericality: { greater_than: 1 } do
+  with_options presence: true, numericality: { greater_than: 1, message: "を選択してください" } do
     validates :category_id
     validates :condition_id
     validates :shipping_bear_id
     validates :prefecture_id
     validates :preparation_date_id
   end
-  validates :price, presence: true, numericality: { only_integer: true, in: 300..9_999_999 }
+  validates :price, presence: true, numericality: { only_integer: true, in: 300..9_999_999, message: "は300～9,999,999円の半角の整数で設定してください" }
 end

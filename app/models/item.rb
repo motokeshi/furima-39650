@@ -20,5 +20,5 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :preparation_date_id
   end
-  validates :price, presence: true, numericality: { only_integer: true, in: 300..9_999_999, message: "は300円～9,999,999円で設定してください" }
+  validates :price, presence: true, numericality: { only_integer: true, in: 300..9_999_999, message: "は300～9,999,999円の半角の整数で設定してください" }
 end
